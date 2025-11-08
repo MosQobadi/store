@@ -1,0 +1,14 @@
+Primary
+#0F172A
+
+Secondary
+#334155
+
+Accent
+#3B82F6
+
+Background
+#F8FAFC
+
+Surface
+#FFFFFF
