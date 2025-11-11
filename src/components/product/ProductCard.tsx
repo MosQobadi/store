@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Card, CardBody, CardFooter } from "@heroui/card";
 
-export const ProductCard = ({ product }: { product }) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const ProductCard = ({ product }: { product: any }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -11,18 +13,32 @@ export const ProductCard = ({ product }: { product }) => (
     viewport={{ once: true }}
     className="group cursor-pointer"
   >
-    <div className="overflow-hidden rounded-2xl bg-neutral-50">
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={400}
-        height={400}
-        className="object-cover w-full h-96 transition-transform duration-500 group-hover:scale-105"
-      />
-    </div>
-    <div className="mt-4 text-center">
-      <h3 className="font-medium">{product.name}</h3>
-      <p className="text-subtle mt-1">${product.price}</p>
-    </div>
+    <Card
+      isPressable
+      shadow="sm"
+      className="flex flex-row-reverse items-center gap-4 overflow-hidden transition-all duration-300 hover:shadow-md"
+    >
+      {/* Left side: image */}
+      <CardBody className="flex-shrink-0 p-0 w-60 h-60 overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.name}
+          width={240}
+          height={240}
+          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+        />
+      </CardBody>
+
+      {/* Right side: info */}
+      <CardFooter className="flex flex-col items-start justify-center gap-2 py-4 px-6">
+        <h3 className="text-lg font-semibold text-default-900">
+          {product.name}
+        </h3>
+        <p className="text-default-500 text-base">${product.price}</p>
+        <p className="text-sm text-default-400 line-clamp-2">
+          {product.description}
+        </p>
+      </CardFooter>
+    </Card>
   </motion.div>
 );
