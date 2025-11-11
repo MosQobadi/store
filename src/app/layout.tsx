@@ -25,7 +25,7 @@ export default function RootLayout({
         {/* <Providers> */}
         <Navbar />
 
-        <main className="flex-1 mx-auto w-full max-w-[2500px]  py-8">
+        <main className="flex-1 mx-auto w-full max-w-[2500px] py-8">
           {children}
         </main>
 

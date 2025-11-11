@@ -9,7 +9,7 @@ export const products = [
     id: "2",
     name: "iPhone 15 Pro",
     price: 999,
-    image: "/images/rode-mic4.png",
+    image: "/images/boya-mic3.webp",
   },
   {
     id: "3",
@@ -22,17 +22,5 @@ export const products = [
     name: "Apple Watch Ultra",
     price: 799,
     image: "/images/rode-mic1.png",
-  },
-  {
-    id: "4",
-    name: "Apple Watch Ultra",
-    price: 799,
-    image: "/images/rode-mic2.png",
-  },
-  {
-    id: "4",
-    name: "Apple Watch Ultra",
-    price: 799,
-    image: "/images/rode-mic3.png",
   },
 ];
