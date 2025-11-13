@@ -1,13 +1,16 @@
-// import { ProductCard } from "@/components/product/ProductCard";
 import { products } from "@/types/products";
 import ProductCard from "../product/ProductCard";
+import Header from "../ui/Header";
 
 export const FeaturedSection = () => (
   <section className="py-24 max-w-7xl mx-auto">
-    <h2 className="text-3xl font-medium mb-12 text-center">
-      Featured Products
-    </h2>
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-2">
+    <Header
+      title="Featured Products"
+      subtitle="Discover our most popular tech gear, handpicked for creators."
+      variant="h2"
+      align="left"
+    />
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
