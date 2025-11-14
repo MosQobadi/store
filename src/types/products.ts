@@ -1,4 +1,4 @@
-export const products = [
+export const productBanners = [
   {
     id: "1",
     name: "AirPods Pro 2",

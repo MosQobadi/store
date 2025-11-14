@@ -27,7 +27,7 @@ export const Header: React.FC<SectionHeaderProps> = ({
 
   //   FIXME: change any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Heading = variant as any; // to use variable tag names
+  const Heading = variant as any;
 
   return (
     <div className={`flex flex-col ${alignment} mb-8 ${className}`}>
