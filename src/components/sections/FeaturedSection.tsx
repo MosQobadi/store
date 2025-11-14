@@ -3,7 +3,7 @@ import ProductCard from "../product/ProductCard";
 import Header from "../ui/Header";
 
 export const FeaturedSection = () => (
-  <section className="py-24 max-w-7xl mx-auto">
+  <section className="py-15 max-w-7xl mx-auto">
     <Header
       title="Featured Products"
       subtitle="Discover our most popular tech gear, handpicked for creators."

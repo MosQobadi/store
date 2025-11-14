@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const HeroSection = () => (
   <section
-    className="relative flex flex-col items-center justify-center text-center px-6 py-32 bg-cover bg-center bg-no-repeat"
+    className="relative flex flex-col items-center justify-center text-center px-6 py-52 bg-cover bg-center bg-no-repeat"
     style={{
       backgroundImage:
         "url('https://www-cdn.djiits.com/cms/uploads/a3f51196440a72a863363c35ce42e332@origin.jpg')",
