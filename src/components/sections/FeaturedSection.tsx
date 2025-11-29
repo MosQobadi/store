@@ -1,6 +1,7 @@
 import { productBanners } from "@/types/products";
 import ProductCard from "../product/ProductCard";
 import Header from "../ui/Header";
+import ProductsPage from "@/app/products/page";
 
 export const FeaturedSection = () => (
   <section className="py-15 max-w-7xl mx-auto">
@@ -15,5 +16,6 @@ export const FeaturedSection = () => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
+    <ProductsPage />
   </section>
 );
