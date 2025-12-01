@@ -16,12 +16,10 @@ export const Navbar = () => (
         <Link href="/products" className="hover:text-black">
           Products
         </Link>
-        <Link href="/cart" className="hover:text-black">
-          Cart
+        <Link href="/categories" className="hover:text-black">
+          Categories
         </Link>
       </div>
-
-      {/* Right: Empty for now (optional space for cart icon, user, etc.) */}
       <div className="w-8" />
     </div>
   </nav>

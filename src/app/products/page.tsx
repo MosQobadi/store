@@ -1,4 +1,4 @@
-import ProductsList from "@/components/product/ProductsList";
+import ProductsList from "@/components/products/ProductsList";
 
 export const metadata = {
   title: "Products | Store",

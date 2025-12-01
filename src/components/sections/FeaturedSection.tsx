@@ -1,5 +1,5 @@
 import { productBanners } from "@/types/products";
-import ProductCard from "../product/ProductCard";
+import ProductCard from "../products/ProductCard";
 import Header from "../ui/Header";
 import ProductsPage from "@/app/products/page";
 
