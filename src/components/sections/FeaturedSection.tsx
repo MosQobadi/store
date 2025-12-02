@@ -2,6 +2,8 @@ import { productBanners } from "@/types/products";
 import ProductCard from "../products/ProductCard";
 import Header from "../ui/Header";
 import ProductsPage from "@/app/products/page";
+import CategoriesList from "../categories/CategoriesList";
+import TopProducts from "../products/TopProducts";
 
 export const FeaturedSection = () => (
   <section className="py-15 max-w-7xl mx-auto">
@@ -11,11 +13,13 @@ export const FeaturedSection = () => (
       variant="h2"
       align="left"
     />
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    {/* <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
       {productBanners.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </div>
-    <ProductsPage />
+    </div> */}
+    {/* <ProductsPage /> */}
+    <CategoriesList />
+    <TopProducts />
   </section>
 );
