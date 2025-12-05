@@ -4,7 +4,7 @@ import { supabaseServer } from "@/lib/supabase/server";
 export async function GET() {
   const supabase = await supabaseServer();
 
-  const { data, error } = await supabase.from("products").select("*"); // add all fields you need
+  const { data, error } = await supabase.from("products").select("*");
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

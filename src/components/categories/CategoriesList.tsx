@@ -4,6 +4,7 @@ import { getCategories } from "@/lib/api/categories";
 import { Category } from "@/types/categories";
 import { Button, Card, CardFooter, CardHeader, Image } from "@heroui/react";
 import { useQuery } from "@tanstack/react-query";
+import CategoryCard from "./CategoryCard";
 
 const CategoriesList = () => {
   const { data, isLoading, error } = useQuery({
