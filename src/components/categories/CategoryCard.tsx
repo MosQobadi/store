@@ -4,8 +4,6 @@ import { Button, Card, CardFooter, CardHeader, Image } from "@heroui/react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function CategoryCard({ category }: { category: any }) {
-  console.log({ category });
-
   return (
     <Card
       isFooterBlurred
