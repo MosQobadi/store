@@ -10,8 +10,6 @@ export default function ProductsList() {
     queryFn: getProducts,
   });
 
-  // console.log(data);
-
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Failed to load products.</p>;
 

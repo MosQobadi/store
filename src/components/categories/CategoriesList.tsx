@@ -1,8 +1,7 @@
 "use client";
 
 import { getCategories } from "@/lib/api/categories";
-import { Category } from "@/types/categories";
-import { Button, Card, CardFooter, CardHeader, Image } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { useQuery } from "@tanstack/react-query";
 import CategoryCard from "./CategoryCard";
 import Spinner from "../ui/Spinner";
@@ -15,8 +14,6 @@ const CategoriesList = () => {
     queryFn: getCategories,
   });
 
-  console.log(data);
-
   const [showAll, setShowAll] = useState(false);
 
   if (isLoading) return <Spinner />;
@@ -25,8 +22,8 @@ const CategoriesList = () => {
   const visibleCategories = showAll ? data : data.slice(0, 4);
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    <div className="max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {visibleCategories.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}

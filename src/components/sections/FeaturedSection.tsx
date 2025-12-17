@@ -10,9 +10,11 @@ export const FeaturedSection = () => (
       variant="h2"
       align="left"
     />
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-      <CategoriesList />
-    </div>
+
+    {/* Categories */}
+    <CategoriesList />
+
+    {/* Products */}
     <ProductsPage />
   </section>
 );
