@@ -5,6 +5,9 @@ import { Category } from "@/types/categories";
 import { Button, Card, CardFooter, CardHeader, Image } from "@heroui/react";
 import { useQuery } from "@tanstack/react-query";
 import CategoryCard from "./CategoryCard";
+import Spinner from "../ui/Spinner";
+import { useState } from "react";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const CategoriesList = () => {
   const { data, isLoading, error } = useQuery({
@@ -12,50 +15,37 @@ const CategoriesList = () => {
     queryFn: getCategories,
   });
 
-  console.log(123123, { data });
+  console.log(data);
 
-  if (isLoading) return <p>Loading...</p>;
+  const [showAll, setShowAll] = useState(false);
+
+  if (isLoading) return <Spinner />;
   if (error) return <p>Failed to load products.</p>;
 
+  const visibleCategories = showAll ? data : data.slice(0, 4);
+
   return (
-    <>
-      {data.map((category: Category) => (
-        <Card
-          key={category.id}
-          isFooterBlurred
-          className="group w-full max-w-[720px] h-100 overflow-hidden transition-all duration-300"
-        >
-          <CardHeader className="absolute z-10 top-1 flex-col items-start">
-            <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-            <h4 className="text-white font-medium text-2xl">
-              {category.name_en}
-            </h4>
-          </CardHeader>
-
-          <Image
-            removeWrapper
-            alt={category.name_en}
-            className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-            src={category.image}
-          />
-
-          <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-            <div>
-              <p className="text-white text-tiny">${category.slug_en}</p>
-              <p className="text-white text-tiny">Available soon.</p>
-            </div>
-            <Button
-              className="text-tiny"
-              color="primary"
-              radius="full"
-              size="sm"
-            >
-              Notify Me
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </>
+    <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+        {visibleCategories.map((category) => (
+          <CategoryCard key={category.id} category={category} />
+        ))}
+      </div>
+      {!showAll && data.length > 4 && (
+        <>
+          <Button
+            onClick={() => setShowAll(true)}
+            variant="flat"
+            radius="lg"
+            color="primary"
+            className="mx-auto mt-2 font-medium shadow-sm hover:shadow-md transition-all text-xs"
+            endContent={<RiArrowDownSLine className="text-lg" />}
+          >
+            Show More Categories
+          </Button>
+        </>
+      )}
+    </div>
   );
 };
 

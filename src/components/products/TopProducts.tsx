@@ -13,8 +13,6 @@ const TopProducts = () => {
     return product.tags.includes("tag1");
   });
 
-  console.log(topProducts);
-
   return <div></div>;
 };
 
