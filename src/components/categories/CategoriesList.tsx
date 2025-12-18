@@ -7,8 +7,13 @@ import CategoryCard from "./CategoryCard";
 import Spinner from "../ui/Spinner";
 import { useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { Lang } from "@/types/lang";
 
-const CategoriesList = () => {
+type Props = {
+  lang: Lang;
+};
+
+const CategoriesList = ({ lang }: Props) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["categories"],
     queryFn: getCategories,
@@ -25,7 +30,7 @@ const CategoriesList = () => {
     <div className="max-w-5xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {visibleCategories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+          <CategoryCard key={category.id} category={category} lang={lang} />
         ))}
       </div>
       {!showAll && data.length > 4 && (
@@ -38,7 +43,9 @@ const CategoriesList = () => {
             className="mx-auto mt-2 font-medium shadow-sm hover:shadow-md transition-all text-xs"
             endContent={<RiArrowDownSLine className="text-lg" />}
           >
-            Show More Categories
+            {lang === "fa"
+              ? "مشاهده دسته‌بندی‌های بیشتر"
+              : "Show More Categories"}
           </Button>
         </>
       )}

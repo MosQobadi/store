@@ -1,7 +1,7 @@
-import React from "react";
-
-const layout = () => {
-  return <div></div>;
-};
-
-export default layout;
+export default function FaLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fa" dir="rtl" className="rtl">
+      <body>{children}</body>
+    </html>
+  );
+}

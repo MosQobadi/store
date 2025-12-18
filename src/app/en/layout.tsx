@@ -1,7 +1,7 @@
-import React from "react";
-
-const layout = () => {
-  return <div></div>;
-};
-
-export default layout;
+export default function EnLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" dir="ltr">
+      <body>{children}</body>
+    </html>
+  );
+}

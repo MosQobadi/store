@@ -10,7 +10,7 @@ export default function HomePage() {
 
       <Swiper />
       <Container>
-        <FeaturedSection />
+        <FeaturedSection lang="en" />
       </Container>
     </>
   );

@@ -1,20 +1,27 @@
 import Header from "../ui/Header";
 import ProductsPage from "@/app/products/page";
 import CategoriesList from "../categories/CategoriesList";
+import { Lang } from "@/types/lang";
 
-export const FeaturedSection = () => (
+type Props = {
+  lang: Lang;
+};
+
+export const FeaturedSection = ({ lang }: Props) => (
   <section className="py-15 max-w-7xl mx-auto">
     <Header
-      title="Featured Products"
-      subtitle="Discover our most popular tech gear, handpicked for creators."
+      title={lang === "fa" ? "محصولات ویژه" : "Featured Products"}
+      subtitle={
+        lang === "fa"
+          ? "محبوب‌ترین تجهیزات تکنولوژی"
+          : "Discover our most popular tech gear"
+      }
       variant="h2"
-      align="left"
+      align={lang === "fa" ? "right" : "left"}
     />
 
-    {/* Categories */}
-    <CategoriesList />
+    <CategoriesList lang={lang} />
 
-    {/* Products */}
     <ProductsPage />
   </section>
 );

@@ -1,5 +1,5 @@
-const page = () => {
-  return <div>page</div>;
-};
+import dict from "@/locales/en";
 
-export default page;
+export default function Page() {
+  return <h1>{dict.home.featuredTitle}</h1>;
+}
