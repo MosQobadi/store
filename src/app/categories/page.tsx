@@ -1,9 +1,16 @@
-import CategoriesList from "@/components/categories/CategoriesList";
+// import CategoriesList from "@/components/categories/CategoriesList";
 
-const page = () => {
+import CategoriesList from "@/components/categories/CategoriesList";
+import { Lang } from "@/types/lang";
+
+type Props = {
+  lang: Lang;
+};
+
+const page = ({ lang }: Props) => {
   return (
     <div>
-      <CategoriesList />
+      <CategoriesList lang={lang} />
     </div>
   );
 };
